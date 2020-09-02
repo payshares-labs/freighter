@@ -34,7 +34,7 @@ yarn build
 
 5. Click `Load Unpacked` and it will open your file system. Navigate to this
    folder and click the `build` folder. Hit `Select`. You should now see an icon
-   for Lyra in Chrome.
+   for Lyra in Chrome/Brave/Firefox.
 
 ## Project Setup
 
@@ -102,7 +102,8 @@ extension, so it has all the capabilites of the `popup` inside the extension.
 _NOTE: This dev environment only works for the `popup`_
 
 Changes to `background` and `content script` will still require a production
-build using `yarn build`, followed by reloading the extension in Chrome.
+build using `yarn build`, followed by reloading the extension in
+Chrome/Brave/Firefox.
 
 We'll also create a route where you can access the Playground, a demo site where
 you can try out your client facing Lyra API.

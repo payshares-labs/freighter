@@ -1,3 +1,5 @@
+import { browser } from "webextension-polyfill-ts";
+
 import {
   DEVELOPMENT,
   EXTERNAL_MSG_REQUEST,
@@ -32,6 +34,6 @@ export const sendMessageToBackground = (msg: {}): Promise<Response> => {
   }
 
   return new Promise((resolve) => {
-    chrome.runtime.sendMessage(msg, (res: Response) => resolve(res));
+    browser.runtime.sendMessage(msg, (res: Response) => resolve(res));
   });
 };
