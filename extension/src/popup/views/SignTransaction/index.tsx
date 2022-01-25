@@ -164,7 +164,7 @@ export const SignTransaction = () => {
 
       <div className="SignTransaction--button-container">
         <Button
-          variant={Button.variant.tertiary}
+          variant={Button.variant.secondary}
           onClick={() => rejectAndClose()}
         >
           Reject
