@@ -10,7 +10,7 @@ import {
   ROUNDED_CORNERS,
 } from "popup/constants/styles";
 
-import ChevronIcon from "popup/assets/icon-chevron.svg";
+import { Icon } from "@stellar/design-system";
 
 export const BasicButton = styled.button`
   background: none;
@@ -73,29 +73,34 @@ export const Button = ({ size, children, onClick, ...props }: ButtonProps) => (
 /* Back Button */
 interface BackButtonProps {
   onClick: () => void;
+  isPopup?: boolean;
 }
 
-const BackButtonEl = styled(BasicButton)`
+const BackButtonEl = styled(BasicButton)<BackButtonProps>`
   position: absolute;
-  top: calc(${HEADER_HEIGHT}px + 1rem);
+  top: ${(props) => (props.isPopup ? 0 : `calc(${HEADER_HEIGHT}px + 1rem)`)};
   left: 1rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  background: ${COLOR_PALETTE.greyFaded};
-  border-radius: 0.625rem;
   justify-content: center;
-  width: 2.3rem;
+  width: 5rem;
   height: 2.3rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: var(--font-weight-medium);
 
-  img {
-    transform: rotate(180deg);
-    width: 0.8rem;
-    height: 0.8rem;
+  svg {
+    width: 1rem;
   }
 `;
 
-export const BackButton = ({ onClick, ...props }: BackButtonProps) => (
-  <BackButtonEl onClick={onClick} {...props}>
-    <img src={ChevronIcon} alt="chevron icon" />
+export const BackButton = ({
+  onClick,
+  isPopup = false,
+  ...props
+}: BackButtonProps) => (
+  <BackButtonEl onClick={onClick} isPopup={isPopup} {...props}>
+    <Icon.ArrowLeft /> {!isPopup && "BACK"}
   </BackButtonEl>
 );

@@ -1,0 +1,17 @@
+// width of Back Button
+$button-width: 1.5rem;
+
+.SubviewHeader {
+  align-items: center;
+  color: var(--pal-brand-primary-on);
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &--title {
+    flex-grow: 1;
+    font-weight: var(--font-weight-medium);
+    margin-left: -$button-width;
+    text-align: center;
+  }
+}

@@ -11,6 +11,7 @@ import { ROUTES } from "popup/constants/routes";
 const routeToEventName = {
   [ROUTES.welcome]: METRIC_NAMES.viewWelcome,
   [ROUTES.account]: METRIC_NAMES.viewAccount,
+  [ROUTES.accountHistory]: METRIC_NAMES.viewAccountHistory,
   [ROUTES.addAccount]: METRIC_NAMES.viewAddAccount,
   [ROUTES.importAccount]: METRIC_NAMES.viewImportAccount,
   [ROUTES.signTransaction]: METRIC_NAMES.viewSignTransaction,
@@ -21,13 +22,17 @@ const routeToEventName = {
   [ROUTES.accountCreator]: METRIC_NAMES.viewAccountCreator,
   [ROUTES.recoverAccount]: METRIC_NAMES.viewRecoverAccount,
   [ROUTES.recoverAccountSuccess]: METRIC_NAMES.viewRecoverAccountSuccess,
-  [ROUTES.unlockBackupPhrase]: METRIC_NAMES.viewUnlockBackupPhrase,
-  [ROUTES.displayBackupPhrase]: METRIC_NAMES.viewDisplayBackupPhrase,
-  [ROUTES.unlockBackupPhrase]: METRIC_NAMES.viewUnlockBackupPhrase,
   [ROUTES.displayBackupPhrase]: METRIC_NAMES.viewDisplayBackupPhrase,
   [ROUTES.settings]: METRIC_NAMES.viewSettings,
+  [ROUTES.preferences]: METRIC_NAMES.viewPreferences,
+  [ROUTES.security]: METRIC_NAMES.viewSecurity,
+  [ROUTES.about]: METRIC_NAMES.viewAbout,
   [ROUTES.viewPublicKey]: METRIC_NAMES.viewPublicKey,
   [ROUTES.debug]: METRIC_NAMES.viewDebug,
+  [ROUTES.sendPayment]: METRIC_NAMES.viewSendPayment,
+  [ROUTES.sendPaymentTo]: METRIC_NAMES.sendPaymentTo,
+  [ROUTES.sendPaymentSettings]: METRIC_NAMES.sendPaymentSettings,
+  [ROUTES.sendPaymentConfirm]: METRIC_NAMES.sendPaymentConfirm,
 };
 
 registerHandler<AppState>(navigate, (_, a) => {
